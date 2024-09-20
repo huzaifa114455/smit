@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+  <title>Administration Portal</title>
+
+  <style>
+    body {
+      background-color: #f3f4f6;
+    }
+
+    .navbar {
+      background-color: #4f46e5;
+    }
+
+    .card {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .input-bordered {
+      border: 2px solid #e5e7eb;
+    }
+
+    .input-bordered:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    }
+
+    .btn-primary {
+      background-color: #4f46e5;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #4338ca;
+    }
+
+    .form-control {
+      margin-bottom: 1rem;
+    }
+
+    .loading-spinner {
+      margin-left: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 1rem;
+      }
+
+      .card-title {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- Navbar start -->
+<div class="navbar bg-blue-800 p-4">
+    <div class="flex-1 px-2 lg:flex-none">
+      <a href="./index.html" class="text-lg font-bold text-white">Administration Portal</a>
+    </div>
+    <div class="flex flex-1 justify-end px-2">
+      <div id="nav_option_show" class="flex items-center">
+        <!-- Upload Student Marks Button -->
+        <a href="./UploadStudentMarks.html" class="bg-green-600 text-white font-semibold py-2 px-4 rounded hover:bg-green-700 transition duration-300">Upload Student Marks</a>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar end -->
+  
+
+  <!-- Form start -->
+  <div class="flex justify-center mt-10 px-4">
+    <div class="card w-full max-w-lg bg-white rounded-lg shadow-md">
+      <div class="card-body">
+        <h2 class="card-title">Add Student</h2>
+        <!-- Add an ID for the form -->
+        <form id="add-student-form">
+          <!-- First Name -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">First Name</span>
+            </label>
+            <input id="first-name" type="text" placeholder="Enter First Name" class="input input-bordered w-full" />
+          </div>
+
+          <!-- Last Name -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Last Name</span>
+            </label>
+            <input id="last-name" type="text" placeholder="Enter Last Name" class="input input-bordered w-full" />
+          </div>
+
+          <!-- Email -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Email</span>
+            </label>
+            <input id="email" type="email" placeholder="Enter Email" class="input input-bordered w-full" />
+          </div>
+
+          <!-- Password -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Password</span>
+            </label>
+            <input id="password" type="password" placeholder="Enter Password" class="input input-bordered w-full" />
+          </div>
+
+          <!-- CNIC -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">CNIC</span>
+            </label>
+            <input id="cnic" type="text" placeholder="Enter CNIC (XXXXX-XXXXXXX-X)" class="input input-bordered w-full" />
+          </div>
+
+          <!-- User Type -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">User Type</span>
+            </label>
+            <select id="user-type" class="select select-bordered w-full">
+              <option disabled selected>Select User Type</option>
+              <option>Student</option>
+          
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-control mt-6">
+            <button id="Post_Now_btn" class="btn btn-primary flex items-center justify-center w-full" type="submit">
+              <span id="Post_Now_text">Add Student</span>
+              <span id="loading-spinner" class="loading loading-bars loading-lg hidden"></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Form end -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+  <script type="module" src="./script/index.js"></script>
+</body>
+
+</html>

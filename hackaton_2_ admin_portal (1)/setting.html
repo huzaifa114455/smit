@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+    <style>
+        body {
+            background-color: #f3f4f6; /* Light background color for better contrast */
+        }
+
+        .card {
+            background: linear-gradient(145deg, #ffffff, #e0e0e0);
+            border: 1px solid #dddddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #4f9a94, #2a6f6f);
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            font-size: 1.25rem;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-footer {
+            padding: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar bg-blue-800 p-4">
+        <div class="flex-1 px-2 lg:flex-none">
+            <a href="./index.html" class="text-lg font-bold text-white">Administration Portal</a>
+        </div>
+        <div class="flex flex-1 justify-end px-2">
+            <div id="nav_option_show" class="flex items-center">
+                <!-- Back to Home Button -->
+                <a href="./StudentPortal.html" class="bg-gray-600 text-white font-semibold py-2 px-4 rounded hover:bg-gray-700 transition duration-300">Student Portal</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex justify-center items-center min-h-screen">
+        <div class="card w-[400px] p-[20px]">
+            <div class="card-header">Edit Profile</div>
+            <div class="card-body">
+                <form id="edit-profile-form">
+                    <label class="input input-bordered flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-4 w-4 opacity-70">
+                            <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                            <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+                        </svg>
+                        <input id="cnic_input" type="text" class="grow" placeholder="Enter CNIC" required />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2 mt-3">
+                        <input id="first_name_input" type="text" class="grow" placeholder="Enter First Name" required />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2 mt-3">
+                        <input id="last_name_input" type="text" class="grow" placeholder="Enter Last Name" required />
+                    </label>
+
+                    <div class="text-center mt-5">
+                        <button type="submit" id="update-profile-btn" class="btn btn-primary">
+                            Update Profile
+                            <span id="loading-spinner" class="loading loading-bars loading-lg hidden"></span>
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    <script type="module" src="./script/EditProfile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+  <title>Upload Student Marks</title>
+
+  <style>
+    body {
+      background-color: #f3f4f6;
+    }
+
+    .navbar {
+      background-color: #4f46e5;
+    }
+
+    .card {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .input-bordered {
+      border: 2px solid #e5e7eb;
+    }
+
+    .input-bordered:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    }
+
+    .btn-primary {
+      background-color: #4f46e5;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #4338ca;
+    }
+
+    .form-control {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar start -->
+  <div class="navbar bg-blue-800 p-4">
+    <div class="flex-1 px-2 lg:flex-none">
+      <a href="./index.html" class="text-lg font-bold text-white">Administration Portal</a>
+    </div>
+    <div class="flex flex-1 justify-end px-2">
+      <div id="nav_option_show" class="flex items-center">
+        <!-- Upload Student Marks Button -->
+        <a href="./index.html" class="bg-green-600 text-white font-semibold py-2 px-4 rounded hover:bg-green-700 transition duration-300">login</a>
+        <!-- Logout Button -->
+      </div>
+    </div>
+</div>
+  <!-- Navbar end -->
+
+  <!-- Form start -->
+  <div class="flex justify-center mt-10 px-4">
+    <div class="card w-full max-w-lg bg-white rounded-lg shadow-md">
+      <div class="card-body">
+        <h2 class="card-title">Upload Student Marks</h2>
+        <form id="upload-marks-form">
+          <!-- Course -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Course</span>
+            </label>
+            <input id="course" type="text" placeholder="Enter Course" class="input input-bordered w-full" required />
+          </div>
+
+          <!-- Student ID -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Student ID</span>
+            </label>
+            <input id="student-id" type="text" placeholder="Enter Student ID" class="input input-bordered w-full" required />
+          </div>
+
+          <!-- Marks -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Marks</span>
+            </label>
+            <input id="marks" type="number" placeholder="Enter Marks" class="input input-bordered w-full" required />
+          </div>
+
+          <!-- Total Marks -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Total Marks</span>
+            </label>
+            <input id="total-marks" type="number" placeholder="Enter Total Marks" class="input input-bordered w-full" required />
+          </div>
+
+          <!-- Grade -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Grade</span>
+            </label>
+            <input id="grade" type="text" placeholder="Enter Grade" class="input input-bordered w-full" required />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-control mt-6">
+            <button id="upload-btn" class="btn btn-primary flex items-center justify-center w-full" type="submit">
+              <span id="upload-text">Upload Marks</span>
+              <span id="loading-spinner" class="loading loading-bars loading-lg hidden"></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Form end -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+  <script type="module" src="./script/UploadStudentMarks.js"></script>
+</body>
+
+</html>
